@@ -30,4 +30,10 @@ class EmployeeTest extends AnyFunSuite {
       Employee.createEmployee("Rahul", 25, 0)
     }
   }
+
+  test("Should reject whitespace-only employee name") {
+    intercept[IllegalArgumentException] {
+      Employee.createEmployee("   ", 25, 30000)
+    }
+  }
 }
